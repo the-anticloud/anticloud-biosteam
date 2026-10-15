@@ -1,0 +1,67 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:60f22e2e-9db9-5333-9aae-f99342cba4d5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T08:08:49Z",
+    "component": {
+      "type": "application",
+      "name": "BIOSTEAM",
+      "version": "83b357604d34",
+      "bom-ref": "pkg:generic/anticloud/BIOSTEAM@83b357604d34",
+      "purl": "pkg:generic/anticloud/BIOSTEAM@83b357604d34",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": ""
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "biosteam",
+      "version": ">=2.53.0",
+      "purl": "pkg:pypi/biosteam@2.53.0",
+      "bom-ref": "pypi/biosteam@>=2.53.0"
+    },
+    {
+      "type": "library",
+      "name": "@amcharts/amcharts5",
+      "version": "^5.10.0",
+      "purl": "pkg:npm/@amcharts/amcharts5@^5.10.0",
+      "bom-ref": "npm/@amcharts/amcharts5@^5.10.0"
+    },
+    {
+      "type": "library",
+      "name": "puppeteer",
+      "version": "^23.0.0",
+      "purl": "pkg:npm/puppeteer@^23.0.0",
+      "bom-ref": "npm/puppeteer@^23.0.0"
+    },
+    {
+      "type": "library",
+      "name": "esbuild",
+      "version": "^0.24.0",
+      "purl": "pkg:npm/esbuild@^0.24.0",
+      "bom-ref": "npm/esbuild@^0.24.0"
+    }
+  ]
+}

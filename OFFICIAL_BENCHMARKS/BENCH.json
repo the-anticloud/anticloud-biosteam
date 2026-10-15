@@ -1,0 +1,842 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "BIOSTEAM",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CHEMICAL_PRODUCTION\\BIOSTEAM\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 1240,
+    "source_files_scanned": 586,
+    "lines_of_code": 236725,
+    "languages": {
+      ".py": 586,
+      ".xlsx": 223,
+      ".png": 209,
+      ".csv": 116,
+      ".svg": 30,
+      ".rst": 14,
+      "(none)": 13,
+      ".md": 8,
+      ".txt": 6,
+      ".gif": 6,
+      ".pdf": 5,
+      ".ipynb": 5,
+      ".yaml": 5,
+      ".npy": 4,
+      ".json": 3
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE.txt",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 4,
+    "unique": 4,
+    "by_ecosystem": {
+      "npm": 3,
+      "pypi": 1
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "biosteam",
+        "version": ">=2.53.0",
+        "source_file": "setup.py",
+        "raw": "biosteam>=2.53.0"
+      },
+      {
+        "ecosystem": "npm",
+        "name": "@amcharts/amcharts5",
+        "version": "^5.10.0",
+        "source_file": "biorefineries/isobutanol/plots/voronoi/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "puppeteer",
+        "version": "^23.0.0",
+        "source_file": "biorefineries/isobutanol/plots/voronoi/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "esbuild",
+        "version": "^0.24.0",
+        "source_file": "biorefineries/isobutanol/plots/voronoi/package.json",
+        "raw": ""
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 150,
+    "files_with_findings": 144,
+    "severity": {
+      "high": 20,
+      "medium": 57,
+      "low": 73
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/kinetic_optimization.py",
+            "line": 3996,
+            "cwe": "CWE-327",
+            "snippet": "first 8 hex digits of sha1(relay_spec_json(relay_from, relay_kwargs)),"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/sensitivity_analysis.py",
+            "line": 151,
+            "cwe": "CWE-327",
+            "snippet": "return hashlib.sha1(blob.encode()).hexdigest()[:n_hex]"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/plots/plot_objective_landscape_embedding.py",
+            "line": 173,
+            "cwe": "CWE-327",
+            "snippet": "h = hashlib.sha1()"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 62,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "biorefineries/TAL/models/model_utils.py",
+            "line": 36,
+            "cwe": "CWE-95",
+            "snippet": "exec(codify(statement), namespace_dict)"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/continuous/upgrading_dehydration-etherification-hydrolysis_time_conversion_catalyst-price.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/continuous/upgrading_hydrogenation_time_conversion_catalyst-price.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/continuous/upgrading_ring-opening-hydrolysis_time_conversion_KOH-price.py",
+            "line": 557,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/batch/upgrading_dehydration-etherification-hydrolysis_time_conversion_catalyst-price.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/batch/upgrading_hydrogenation_time_conversion_catalyst-price.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/upgrading_to_KSA/reaction_yields_times/batch/upgrading_ring-opening-hydrolysis_time_conversion_KOH-price.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/production_operation/TALproductioncapacity_operatingdays.py",
+            "line": 576,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_SA_corn.py",
+            "line": 609,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_SA_cornstover.py",
+            "line": 609,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_SA_FGI.py",
+            "line": 690,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_SA_glucose.py",
+            "line": 609,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_SA_sugarcane.py",
+            "line": 609,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_TAL_corn.py",
+            "line": 609,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_TAL_cornstover.py",
+            "line": 611,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_TAL_FGI.py",
+            "line": 687,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_TAL_glucose.py",
+            "line": 699,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/fermentation/TRY_analysis_TAL_sugarcane.py",
+            "line": 619,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/decarboxylation/decarboxylation_pH_TALconversion_baseprice_analytical.py",
+            "line": 558,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/TAL/analyses/decarboxylation/decarboxylation_pH_TALconversion_baseprice_withoutcitrate_analytical.py",
+            "line": 560,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "high",
+            "file": "biorefineries/succinic/model_utils.py",
+            "line": 90,
+            "cwe": "CWE-95",
+            "snippet": "exec(statement, namespace_dict)"
+          },
+          {
+            "severity": "high",
+            "file": "biorefineries/oxalic/models/model_utils.py",
+            "line": 38,
+            "cwe": "CWE-95",
+            "snippet": "exec(codify(statement), namespace_dict)"
+          },
+          {
+            "severity": "high",
+            "file": "biorefineries/oxalic/models/sugarcane/models_sc_broth.py",
+            "line": 32,
+            "cwe": "CWE-95",
+            "snippet": "exec(codify(statement), namespace_dict)"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/oxalic/analyses/fermentation/TRY_analysis_sugarcane_oxalic_broth.py",
+            "line": 620,
+            "cwe": "CWE-89",
+            "snippet": "# fmt_clabel=lambda cvalue: r\"$\\mathrm{\\$}$\"+\" {:.1f} \".format(cvalue)+r\"$\\cdot\\mathrm{kg}^{-1}$\", # format of contour labels"
+          },
+          {
+            "severity": "high",
+            "file": "biorefineries/microalgae/model_utils.py",
+            "line": 78,
+            "cwe": "CWE-95",
+            "snippet": "exec(statement, namespace_dict)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 54,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "biorefineries/wwt/_internal_circulation_rx.py",
+            "line": 12,
+            "cwe": "CWE-",
+            "snippet": "TODO:"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/wheatstraw/units.py",
+            "line": 384,
+            "cwe": "CWE-",
+            "snippet": "self.reactions.force_reaction(effluent.mol) # TODO: Ignore negative O2; probably bug in _system.py"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/wheatstraw/_chemicals.py",
+            "line": 234,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Maybe remove this"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/wheatstraw/_system.py",
+            "line": 150,
+            "cwe": "CWE-",
+            "snippet": "S202, S203, update_split, H201), # TODO: H201 moved to the end, no need to resimulate system"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/tests/test_biorefineries.py",
+            "line": 587,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Potentially deprecate biorefinery"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/TAL/process_areas.py",
+            "line": 959,
+            "cwe": "CWE-",
+            "snippet": "# !!! TODO:"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/TAL/analyses/full/uncertainties_SA_IPA_THF_Ethanol_solubility_exploit.py",
+            "line": 873,
+            "cwe": "CWE-",
+            "snippet": "#!!! TODO: make compatible with multiple modes"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/TAL/analyses/full/uncertainties_SA_solubility_exploit.py",
+            "line": 774,
+            "cwe": "CWE-",
+            "snippet": "#!!! TODO: make compatible with multiple modes"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/succinic/units.py",
+            "line": 1258,
+            "cwe": "CWE-",
+            "snippet": "#TODO:"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/succinic/_process_specification.py",
+            "line": 458,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Update"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oxalic/analyses/full/uncertainties_sc_oxalic_broth.py",
+            "line": 812,
+            "cwe": "CWE-",
+            "snippet": "#!!! TODO: make compatible with multiple modes"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oleochemicals/chemicals_baseline.py",
+            "line": 286,
+            "cwe": "CWE-",
+            "snippet": "# TODO:RuntimeError: <System: SYS19> <System: SYS17> <System: SYS16> <ShortcutColumn: D604> Failed to extrapolate integral of gas heat capacity method 'HEOS_FIT' between T=-998.632"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oleochemicals/modified_conventional.py",
+            "line": 415,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Split values seem arbitrary in NREL 2011 model, perhaps work on a better model"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oleochemicals/prices_and_GWP_factors.py",
+            "line": 70,
+            "cwe": "CWE-",
+            "snippet": "rbd_soybean_oil_pricing = {'2020_2021':0,#TODO: #[5]"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oilcane/_evaluation.py",
+            "line": 130,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Rerun simulations and to remove this commented code block"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oilcane/_uncertainty_plots.py",
+            "line": 1350,
+            "cwe": "CWE-",
+            "snippet": "# TODO: change lower upper values to baseline +- 10%"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/OHFA/systems.py",
+            "line": 75,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add high-pressure homogenizer or maybe filter press?"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/miscanthus/systems.py",
+            "line": 14,
+            "cwe": "CWE-",
+            "snippet": "#TODO: add lactic acid system"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/milk/biorefinery.py",
+            "line": 244,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Update based on industry expert"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/milk/systems.py",
+            "line": 127,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add homogenizer for cells. Maybe remove this centrifuge of MC is 0.8 or more."
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/lipidcane/_process_settings.py",
+            "line": 32,
+            "cwe": "CWE-",
+            "snippet": "'H3PO4': 0, # 0.700, # TODO: find price"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/lipidcane/_webapp_model.py",
+            "line": 196,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add model for sugarcane"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/LAOs/units/nitrogen_generation_package.py",
+            "line": 13,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add cost of molecular sieves and buffer tank."
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/lactic/analyses/1_uncertainties.py",
+            "line": 42,
+            "cwe": "CWE-",
+            "snippet": "# TODO: create model now returns a Model object (not a dictionary)."
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/isobutanol/sensitivity_analysis.py",
+            "line": 325,
+            "cwe": "CWE-",
+            "snippet": "Xp, todo = X.copy(), np.arange(len(X))"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 12,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "biorefineries/oleochemicals/chemicals_baseline.py",
+            "line": 54,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/OHFA/chemicals.py",
+            "line": 19,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/milk/chemicals.py",
+            "line": 36,
+            "cwe": "CWE-1188",
+            "snippet": "CaSO4 = bst.Chemical('CaSO4', phase='s', default=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/scenarios.py",
+            "line": 91,
+            "cwe": "CWE-1188",
+            "snippet": "# burden_default=True on every opt_* scenario (Task 6): the workbooks"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/plots/plot_kin_opt_parameter_sets.py",
+            "line": 2529,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/analyses/build_opt_scenario_workbooks.py",
+            "line": 24,
+            "cwe": "CWE-1188",
+            "snippet": "`scenarios.load_scenario` (burden_default=True), so the workbook's stored"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/isobutanol/analyses/optimize_kinetics_BO_supervised.py",
+            "line": 995,
+            "cwe": "CWE-1188",
+            "snippet": "action='store_false', default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/gas_fermentation/property_package.py",
+            "line": 37,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/gas_fermentation/notebooks/arpa_e_project.py",
+            "line": 21,
+            "cwe": "CWE-1188",
+            "snippet": "default = True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/FT/ft_chemicals.py",
+            "line": 72,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/cane/_chemicals.py",
+            "line": 74,
+            "cwe": "CWE-1188",
+            "snippet": "default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "biorefineries/BDO/partition_coefficients.py",
+            "line": 10,
+            "cwe": "CWE-1188",
+            "snippet": "OleylAlcohol = tmo.Chemical('OleylAlcohol', search_ID='143-28-2', default=True)"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 19,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "biorefineries/wwt/_utils.py",
+            "line": 22,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.nrel.gov/docs/fy11osti/47764.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/TAL/chemicals_data.py",
+            "line": 233,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/TAL/process_settings.py",
+            "line": 279,
+            "cwe": "CWE-319",
+            "snippet": "acetone_price = 0.63 * _GDP_2008_to_2016 * _lb_per_kg # average of range ($0.44 - $0.82 /lb) from https://web.archive.org/web/20161125084558/http://www.icis.com:80/chemicals/channe"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/succinic/chemicals_data.py",
+            "line": 233,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/succinic/process_settings.py",
+            "line": 212,
+            "cwe": "CWE-319",
+            "snippet": "# https://web.archive.org/web/20161125084558/http://www.icis.com:80/chemicals/channel-info-chemicals-a-z/"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/succinic/units.py",
+            "line": 38,
+            "cwe": "CWE-319",
+            "snippet": "http://www.nrel.gov/docs/fy15osti/62498.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oxalic/chemicals_data.py",
+            "line": 252,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oxalic/process_settings.py",
+            "line": 190,
+            "cwe": "CWE-319",
+            "snippet": "# https://web.archive.org/web/20161125084558/http://www.icis.com:80/chemicals/channel-info-chemicals-a-z/"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oleochemicals/prices_and_GWP_factors.py",
+            "line": 550,
+            "cwe": "CWE-319",
+            "snippet": "#[25]http://dx.doi.org/10.1016/j.jclepro.2014.10.011"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/oleochemicals/systems_baseline.py",
+            "line": 164,
+            "cwe": "CWE-319",
+            "snippet": "#[12]http://ptpip.co.id/id/wp-content/uploads/2017/01/H2O2-60persen.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/microalgae/utils.py",
+            "line": 55,
+            "cwe": "CWE-319",
+            "snippet": "'OleylAlcohol': 1.00,  # $/lb https://web.archive.org/web/20161125084558/http://www.icis.com:80/chemicals/channel-info-chemicals-a-z/"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/lactic/_chemicals.py",
+            "line": 179,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/lactic/_units.py",
+            "line": 33,
+            "cwe": "CWE-319",
+            "snippet": "http://www.nrel.gov/docs/fy15osti/62498.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/HP/chemicals_data.py",
+            "line": 243,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/HP/process_settings.py",
+            "line": 182,
+            "cwe": "CWE-319",
+            "snippet": "# https://web.archive.org/web/20161125084558/http://www.icis.com:80/chemicals/channel-info-chemicals-a-z/"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/ethanol_adipic/_chemicals.py",
+            "line": 129,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.191.html, accessed 06/30/2020"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/ethanol_adipic/_units.py",
+            "line": 26,
+            "cwe": "CWE-319",
+            "snippet": "http://www.nrel.gov/docs/fy15osti/62498.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/cane/systems/sugar.py",
+            "line": 24,
+            "cwe": "CWE-319",
+            "snippet": "# http://sugartech.co.za/verticalcrystalliser/index.php"
+          },
+          {
+            "severity": "low",
+            "file": "biorefineries/BDO/chemicals_data.py",
+            "line": 227,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chemspider.com/Chemical-Structure.207215.html, accessed 04/07/2020"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:60f22e2e-9db9-5333-9aae-f99342cba4d5",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T08:08:49Z",
+      "component": {
+        "type": "application",
+        "name": "BIOSTEAM",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/BIOSTEAM@83b357604d34",
+        "purl": "pkg:generic/anticloud/BIOSTEAM@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "biosteam",
+        "version": ">=2.53.0",
+        "purl": "pkg:pypi/biosteam@2.53.0",
+        "bom-ref": "pypi/biosteam@>=2.53.0"
+      },
+      {
+        "type": "library",
+        "name": "@amcharts/amcharts5",
+        "version": "^5.10.0",
+        "purl": "pkg:npm/@amcharts/amcharts5@^5.10.0",
+        "bom-ref": "npm/@amcharts/amcharts5@^5.10.0"
+      },
+      {
+        "type": "library",
+        "name": "puppeteer",
+        "version": "^23.0.0",
+        "purl": "pkg:npm/puppeteer@^23.0.0",
+        "bom-ref": "npm/puppeteer@^23.0.0"
+      },
+      {
+        "type": "library",
+        "name": "esbuild",
+        "version": "^0.24.0",
+        "purl": "pkg:npm/esbuild@^0.24.0",
+        "bom-ref": "npm/esbuild@^0.24.0"
+      }
+    ]
+  },
+  "elapsed_seconds": 31.45
+}
